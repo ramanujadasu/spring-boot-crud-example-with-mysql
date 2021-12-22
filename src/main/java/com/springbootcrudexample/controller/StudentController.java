@@ -25,7 +25,7 @@ public class StudentController {
 
 	@Autowired
 	private StudentService studentService;
-	
+
 	@Autowired
 	private StudentRepository studentRepository;
 
@@ -35,31 +35,41 @@ public class StudentController {
 		return createResponse;
 	}
 
-/*	@PutMapping("/update")
-	public Student updateStudent(@RequestBody Student student) {
+	@PutMapping("/update/{id}")
+	public Student updateStudentById(@RequestBody Student student, @PathVariable String id) {
 		Student updateResponse = studentService.update(student);
 		return updateResponse;
 	}
 
+	@PutMapping("/update")
+	public Student updateStudent(@RequestBody Student student,@PathVariable String id) {
+		Student getStudent = studentService.get(Long.valueOf(id));
+		getStudent.setName(student.getName());
+		getStudent.setRollNumber(student.getRollNumber());
+		Student updateResponse = studentService.update(getStudent);
+		return updateResponse;
+	}
+	
 	@GetMapping("/{id}")
-	public Student getStudent(@PathVariable Long id) {
-		Student getReponse = studentService.get(id);
+	public Student getStudent(@PathVariable String id) {
+		Student getReponse = studentService.get(Long.valueOf(id));
 		return getReponse;
 	}
 
-	@DeleteMapping("/delete")
-	public String deleteStudent(@RequestBody Student student) {
+	@DeleteMapping("/delete/{id}")
+	public String deleteStudent(@PathVariable String id) {
+		Student student = studentService.get(Long.valueOf(id));
 		studentService.delete(student);
 		return "Record deleted succesfully";
-	}*/
-	
+	}
+
 	@GetMapping(value = "/home")
 	public ModelAndView homePage() {
 		ModelAndView modelAndView = new ModelAndView("index");
 		modelAndView.addObject("student", new Student());
 		return modelAndView;
 	}
-	
+
 	@GetMapping(value = "/createstudent")
 	public ModelAndView createStudentView() {
 		ModelAndView modelAndView = new ModelAndView("index");
@@ -68,28 +78,22 @@ public class StudentController {
 	}
 
 	@PostMapping("/createstudent")
-	public ModelAndView createStudent( Student student) {
+	public ModelAndView createStudent(Student student) {
 		ModelAndView modelAndView = new ModelAndView();
 		studentService.save(student);
 		modelAndView.setViewName("savestudent");
-		//logger.info("Form submitted successfully.");
+		// logger.info("Form submitted successfully.");
 		return modelAndView;
 	}
-	
+
 	@GetMapping("/getallstudents")
 	public ModelAndView getAllStudents() {
 		ModelAndView modelAndView = new ModelAndView();
-	    List<Student> students = studentRepository.findAll();
+		List<Student> students = studentRepository.findAll();
 		modelAndView.addObject("students", students);
 		modelAndView.setViewName("studentinfo");
-		//logger.info("Form submitted successfully.");
+		// logger.info("Form submitted successfully.");
 		return modelAndView;
 	}
-	
-/*	@PostMapping("/create")
-	public ModelAndView createStudent(@RequestBody Student student) {
-		ModelAndView modelAndView = new ModelAndView
-		Student createResponse = studentService.save(student);
-		return createResponse;
-	}*/
+
 }

@@ -15,8 +15,12 @@
         <tr th:each="student : ${students}">
 	      <td th:text="${student.id}">Id</td>
 		  <td th:text="${student.name}">Title</td>
-		  <td th:text="${student.rollNumber}">Gender</td>	  		  
-	    </tr>	
+		  <td th:text="${student.rollNumber}">Gender</td>	  
+		   <td><a th:href="@{'/student/' + ${student.id}}">View Student</a></td>
+		<td><a th:href="@{'/student/update/'+ ${student.id}}">Update Student</a></td>
+		<td><a th:href="@{'/student/delete/' + ${student.id}}">Delete Student</a></td>		  
+	    </tr>
+
 	</table>
 	<a href="#" th:href="@{/student/createstudent}">Add User</a>
 </body>

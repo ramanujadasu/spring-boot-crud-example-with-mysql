@@ -1,0 +1,7 @@
+/Users/vsrr.ramanujadasu/git/spring-boot-crud-example-with-mysql/src/main/java/com/springbootcrudexample/entity/Student.java
+/Users/vsrr.ramanujadasu/git/spring-boot-crud-example-with-mysql/src/main/java/com/springbootcrudexample/repository/StudentRepository.java
+/Users/vsrr.ramanujadasu/git/spring-boot-crud-example-with-mysql/src/main/java/com/springbootcrudexample/controller/StudentController.java
+/Users/vsrr.ramanujadasu/git/spring-boot-crud-example-with-mysql/src/main/java/com/springbootcrudexample/serviceimpl/StudentServiceImpl.java
+/Users/vsrr.ramanujadasu/git/spring-boot-crud-example-with-mysql/src/main/java/com/springbootcrudexample/config/JpaConfig.java
+/Users/vsrr.ramanujadasu/git/spring-boot-crud-example-with-mysql/src/main/java/com/springbootcrudexample/service/StudentService.java
+/Users/vsrr.ramanujadasu/git/spring-boot-crud-example-with-mysql/src/main/java/com/springbootcrudexample/main/SpringMain.java

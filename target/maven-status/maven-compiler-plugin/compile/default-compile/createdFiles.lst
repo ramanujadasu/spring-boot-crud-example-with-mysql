@@ -1,0 +1,7 @@
+com/springbootcrudexample/main/SpringMain.class
+com/springbootcrudexample/config/JpaConfig.class
+com/springbootcrudexample/entity/Student.class
+com/springbootcrudexample/controller/StudentController.class
+com/springbootcrudexample/service/StudentService.class
+com/springbootcrudexample/repository/StudentRepository.class
+com/springbootcrudexample/serviceimpl/StudentServiceImpl.class

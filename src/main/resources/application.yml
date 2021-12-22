@@ -4,8 +4,8 @@ spring:
     hibernate:
       ddl-auto: create
   datasource:
-    url: jdbc:mysql://localhost:3306/springbootcrudexample
+    url: jdbc:mysql://localhost:3306/testmysql
     username: root
-    password: root
+    password: R@kuten@250987
 server:
    port: 9091       
