@@ -32,5 +32,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Users/vsrr.ramanujadasu/Downloads/RCP PaaS/Softwares/lombok.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

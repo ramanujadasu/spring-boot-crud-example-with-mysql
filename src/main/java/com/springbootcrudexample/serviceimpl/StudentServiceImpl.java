@@ -1,5 +1,6 @@
 package com.springbootcrudexample.serviceimpl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,32 @@ public class StudentServiceImpl implements StudentService {
 	@Transactional
 	public void delete(Student student) {
 		studentRepository.delete(student);
+	}
+	
+	@Override
+	@Transactional
+	public List<Student> saveAll(List<Student> students) {
+		List<Student> saveResponse = studentRepository.saveAll(students);
+		return saveResponse;
+	}
+
+	@Override
+	@Transactional
+	public List<Student> updateAll(List<Student> students) {
+		List<Student> updateResponse = studentRepository.saveAll(students);
+		return updateResponse;
+	}
+
+	@Override
+	@Transactional
+	public List<Student> getAll() {
+		List<Student> saveResponse = studentRepository.findAll();
+		return saveResponse;
+	}
+
+	@Override
+	@Transactional
+	public void deleteAll(List<Student> students) {
+		studentRepository.deleteAll(students);
 	}
 }

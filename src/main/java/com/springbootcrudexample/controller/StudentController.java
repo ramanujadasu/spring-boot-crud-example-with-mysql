@@ -95,5 +95,30 @@ public class StudentController {
 		// logger.info("Form submitted successfully.");
 		return modelAndView;
 	}
+	
+	
+	@PostMapping("/bulkcreate")
+	public List<Student> createStudents(@RequestBody List<Student> students) {
+		List<Student> createResponse = studentService.saveAll(students);
+		return createResponse;
+	}
+
+	@PutMapping("/bulkupdate")
+	public List<Student> updateStudents(@RequestBody List<Student> students) {
+		List<Student> updateResponse = studentService.updateAll(students);
+		return updateResponse;
+	}
+
+	@GetMapping("/allstudent")
+	public List<Student> getStudents() {
+		List<Student> getresponse = studentService.getAll();
+		return getresponse;
+	}
+
+	@DeleteMapping("/bulkdelete")
+	public String deleteStudents(@RequestBody List<Student> students) {
+		studentService.deleteAll(students);
+		return "Records deleted succesfully";
+	}
 
 }
